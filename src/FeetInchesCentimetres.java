@@ -9,4 +9,15 @@ public class FeetInchesCentimetres {
         System.out.println(feet + " ft and " + inches + " in = " + centimetres + " cm.");
         return centimetres;
     }
+
+    public static double calcFeetAndInchesToCentimetres(double inches) {
+        if (inches < 0) {
+            return -1;
+        }
+        double feet = (int) inches / 12;
+        double remainingInches = (int) inches % 12;
+        System.out.println(inches + " in = " + feet + " ft and " + remainingInches + " in.");
+        return calcFeetAndInchesToCentimetres(feet, remainingInches);
+    }
 }
+
